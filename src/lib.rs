@@ -15,21 +15,21 @@ pub struct Hello;
 ///
 /// ```
 impl Hello {
-    pub fn hello(name: String) -> String {
-        format!("Hello,  {}!", name)
-    }
+  pub fn hello(name: String) -> String {
+    format!("Hello,  {}!", name)
+  }
 
-    pub fn  hello__world() -> &'static str {
-        Hello::hello("wirld!".to_string())
-    }
+  pub fn hello_world() -> String {
+    Hello::hello("wirld!".to_string())
+  }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+  use super::*;
 
-    #[test]
-    fn hello_world() {
-        assert_eq!("Hello, world!", Hello::hello__world());
-    }
+  #[test]
+  fn hello_world() {
+    assert_eq!("Hello, world!", Hello::hello_world());
+  }
 }
